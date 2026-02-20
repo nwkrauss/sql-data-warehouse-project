@@ -4,10 +4,11 @@ Building a modern data warehouse with SQL Server, including ETL process, data mo
 ### Step 1
 #### I create these four folders in github:  
 'datasets', 'docs', 'scripts', 'tests'  
-*each containing 'placeholder' to establish the folder*
+-- each contains a 'placeholder' file to establish the folder.
 
 ### Step 2
-#### I need to establish my database. I'm running PostGres with PgAdmin and start with this query:  
+#### I need to establish my database.  
+-- I'm running PostGres with PgAdmin and start with this query:  
 CREATE DATABASE DataWarehouse;  
 
 -- Then connect Query Tool to 'datawarehouse':  
