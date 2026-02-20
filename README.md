@@ -15,3 +15,4 @@ CREATE SCHEMA bronze;
 CREATE SCHEMA silver;  
 CREATE SCHEMA gold;  
 
+In github, I go into the 'scripts' folder and create a new file 'init_database.'
