@@ -12,7 +12,7 @@ Building a modern data warehouse with SQL Server, including ETL process, data mo
 CREATE DATABASE DataWarehouse;  
 
 -- Then connect Query Tool to 'datawarehouse'  
--- In the new Query Tool that is connected to 'datawarehouse':
+-- In the new Query Tool that is connected to 'datawarehouse':  
 CREATE SCHEMA bronze;  
 CREATE SCHEMA silver;  
 CREATE SCHEMA gold;  
