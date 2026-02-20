@@ -1,5 +1,5 @@
+-- **Step 1**
 -- I'm running PostGres with PgAdmin. 
--- Step 1:
 CREATE DATABASE DataWarehouse;
 
 -- Then I can connect to 'datawarehouse' with the Query Tool.
