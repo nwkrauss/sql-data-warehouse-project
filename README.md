@@ -7,7 +7,7 @@ Building a modern data warehouse with SQL Server, including ETL process, data mo
 -- each contains a 'placeholder' file to establish the folder.
 
 ### Step 2
-#### I need to establish my database.  
+#### I establish my database.  
 -- I'm running PostGres with PgAdmin and start with this query:  
 CREATE DATABASE DataWarehouse;  
 
