@@ -19,7 +19,7 @@ CREATE SCHEMA gold;
 #### In this file, I include the code used in this step.  
 #### I also include, at the top, a "sticky note" that explains what the file is.  This is the note:  
 Create Database and Schemas
-Script Purpose:  
+<li> Script Purpose:  
     This script creates a new database named 'DataWarehouse'.
     Additionally, the script sets up three schemas within the database:
     'bronze', 'silver', and 'gold'.  
