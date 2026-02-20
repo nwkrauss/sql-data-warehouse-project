@@ -7,7 +7,7 @@ Building a modern data warehouse with SQL Server, including ETL process, data mo
 *each containing 'placeholder' to establish the folder*
 
 ### Step 2
-#### I'm running PostGres with PgAdmin. I start with this:  
+#### I need to establish my database. I'm running PostGres with PgAdmin and start with this query:  
 CREATE DATABASE DataWarehouse;  
 
 -- Then connect Query Tool to 'datawarehouse':  
