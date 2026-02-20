@@ -7,3 +7,11 @@ datasets, docs, scripts, tests
 *each containing 'placeholder'*
 
 ### Step 2
+I'm running PostGres with PgAdmin. I start with this  
+CREATE DATABASE DataWarehouse;  
+
+Then connect Query Tool to 'datawarehouse':  
+CREATE SCHEMA bronze;  
+CREATE SCHEMA silver;  
+CREATE SCHEMA gold;  
+
