@@ -7,17 +7,17 @@ datasets, docs, scripts, tests
 *each containing 'placeholder'*
 
 ### Step 2
-I'm running PostGres with PgAdmin. I start with this  
+#### I'm running PostGres with PgAdmin. I start with this  
 CREATE DATABASE DataWarehouse;  
 
-Then connect Query Tool to 'datawarehouse':  
+#### Then connect Query Tool to 'datawarehouse':  
 CREATE SCHEMA bronze;  
 CREATE SCHEMA silver;  
 CREATE SCHEMA gold;  
 
-In github, I go into the 'scripts' folder and create a new file 'init_database.sql'  
-In this file, I include the code used in this step.  
-I also include, at the top, a "sticky note" that explains what the file is.  This is the note:  
+#### In github, I go into the 'scripts' folder and create a new file 'init_database.sql'  
+#### In this file, I include the code used in this step.  
+#### I also include, at the top, a "sticky note" that explains what the file is.  This is the note:  
 Create Database and Schemas
 Script Purpose:  
     This script creates a new database named 'DataWarehouse'.
