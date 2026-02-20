@@ -1,9 +1,9 @@
--- **Step 1**
--- I'm running PostGres with PgAdmin. 
+-- Step 1
+-- I'm running PostGres with PgAdmin. Start by creating a new database.
 CREATE DATABASE DataWarehouse;
 
--- Then I can connect to 'datawarehouse' with the Query Tool.
--- STEP 2:
+-- STEP 2
+-- Now I can connect to 'datawarehouse' with the Query Tool.
 CREATE SCHEMA bronze;
 CREATE SCHEMA silver;
 CREATE SCHEMA gold;
