@@ -114,11 +114,11 @@ FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-
 DELIMITER ','
 CSV HEADER;
 
-/* This COPY didn't work because 'sls_order_dt' contains some rows
+This COPY didn't work because 'sls_order_dt' contains some rows
 with '0' instead of proper DATE format. I will go through and ALTER
 the data type of the column to be able to ingest, then change '0' to 
 NULL, and then ALTER again back to the DATE type.
-*/
+
 ALTER TABLE bronze.crm_sales_details 
 ALTER COLUMN sls_order_dt TYPE VARCHAR(50);
 
@@ -130,9 +130,8 @@ UPDATE bronze.crm_sales_details
 SET sls_order_dt = NULL
 WHERE sls_order_dt = '0';
 
-/* This query looks for records in the column that
+This query looks for records in the column that
 are not 8 characters long.
-*/
 SELECT *
 FROM bronze.crm_sales_details
 WHERE sls_order_dt !~'^\d{8}$';
