@@ -114,9 +114,43 @@ FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-
 DELIMITER ','
 CSV HEADER;
 
-ERROR:  date/time field value out of range: "0"
-HINT:  Perhaps you need a different "DateStyle" setting.
-CONTEXT:  COPY crm_sales_details, line 35321, column sls_order_dt: "0"
+/* This COPY didn't work because 'sls_order_dt' contains some rows
+with '0' instead of proper DATE format. I will go through and ALTER
+the data type of the column to be able to ingest, then change '0' to 
+NULL, and then ALTER again back to the DATE type.
+*/
+ALTER TABLE bronze.crm_sales_details 
+ALTER COLUMN sls_order_dt TYPE VARCHAR(50);
+
+SELECT *
+FROM bronze.crm_sales_details
+WHERE sls_order_dt = '0';
+
+UPDATE bronze.crm_sales_details
+SET sls_order_dt = NULL
+WHERE sls_order_dt = '0';
+
+/* This query looks for records in the column that
+are not 8 characters long.
+*/
+SELECT *
+FROM bronze.crm_sales_details
+WHERE sls_order_dt !~'^\d{8}$';
+
+-- I found two entries still throwing me off: "32154" and "5489"
+
+UPDATE bronze.crm_sales_details
+SET sls_order_dt = NULL
+WHERE sls_order_dt = '32154';
+
+UPDATE bronze.crm_sales_details
+SET sls_order_dt = NULL
+WHERE sls_order_dt = '5489';
+
+-- Now I can convert to DATE.
+ALTER TABLE bronze.crm_sales_details 
+ALTER COLUMN sls_order_dt TYPE DATE 
+USING to_date(sls_order_dt, 'YYYYMMDD');
 */
 BULK INSERT bronze.crm_cust_info
 FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
