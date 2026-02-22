@@ -3,10 +3,15 @@
 Create Tables in the Bronze Layer
 ============================================================
 Script Purpose:  
-    This script creates six empty tables within the bronze layer.
-    The tables are 1 to 1 equivalents of the source files.
+    The first part of this script creates six empty tables
+	within the bronze layer. The tables are 1 to 1 equivalents
+	of the source files.
+
+	The second part of this script uses COPY to batch import the data
+	from .csv files into the tables.
 */
 
+-- Step 1
 CREATE TABLE bronze.crm_cust_info (
 	cst_id INT,
 	cst_key VARCHAR(50),
@@ -56,3 +61,33 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 	subcat VARCHAR(50),
 	maintenance VARCHAR(50)
 );
+
+-- Step 2
+/* The code stored in this comment is for use within PostgreSQL.
+The code that follows *after* the comment show the same functions
+for use in standard ANSI SQL syntax.
+
+COPY bronze.crm_cust_info(
+	cst_id,
+	cst_key,
+	cst_firstname,
+	cst_lastname,
+	cst_marital_status,
+	cst_gndr,
+	cst_create_date
+	)
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+*/
+BULK INSERT bronze.crm_cust_info
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
+WITH
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	TABLOCK
+;
+
+
