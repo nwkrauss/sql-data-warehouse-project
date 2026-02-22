@@ -25,7 +25,7 @@ CREATE TABLE bronze.crm_cust_info (
 CREATE TABLE bronze.crm_prd_info (
 	prd_id INT,
 	prd_key VARCHAR(50),
-	prd_name VARCHAR(50),
+	prd_nm VARCHAR(50),
 	prd_cost INT,
 	prd_line VARCHAR(50),
 	prd_start_dt DATE,
@@ -80,7 +80,43 @@ FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-
 DELIMITER ','
 CSV HEADER;
 
+/* I include this step to verify the row count in the table
+matches the source file. */
+SELECT COUNT(*) FROM bronze.crm_cust_info;
 
+COPY bronze.crm_prd_info(
+	prd_id,
+	prd_key,
+	prd_nm,
+	prd_cost,
+	prd_line,
+	prd_start_dt,
+	prd_end_dt
+	)
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/prd_info.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT COUNT(*) FROM bronze.crm_prd_info;
+
+COPY bronze.crm_sales_details(
+	sls_ord_num,
+	sls_prd_key,
+	sls_cust_id,
+	sls_order_dt,
+	sls_ship_dt,
+	sls_due_dt,
+	sls_sales,
+	sls_quantity,
+	sls_price
+	)
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/sales_details.csv'
+DELIMITER ','
+CSV HEADER;
+
+ERROR:  date/time field value out of range: "0"
+HINT:  Perhaps you need a different "DateStyle" setting.
+CONTEXT:  COPY crm_sales_details, line 35321, column sls_order_dt: "0"
 */
 BULK INSERT bronze.crm_cust_info
 FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
