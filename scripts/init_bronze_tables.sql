@@ -3,7 +3,7 @@
 Create Tables in the Bronze Layer
 ============================================================
 Script Purpose:  
-    This script creates six new tables within the bronze layer.
+    This script creates six empty tables within the bronze layer.
     The tables are 1 to 1 equivalents of the source files.
 /*
 
