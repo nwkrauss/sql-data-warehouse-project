@@ -80,8 +80,8 @@ FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-
 DELIMITER ','
 CSV HEADER;
 
-/* I include this step to verify the row count in the table
-matches the source file. */
+I include this step to verify the row count in the table
+matches the source file.
 SELECT COUNT(*) FROM bronze.crm_cust_info;
 
 COPY bronze.crm_prd_info(
