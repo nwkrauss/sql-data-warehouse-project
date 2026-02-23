@@ -1,3 +1,13 @@
+/*
+=================================================================
+Stream Data from Source Files Into Tables in the Bronze Layer
+=================================================================
+Script Purpose:  
+    This script executes a TRUNCATE and then batch load for each
+	table in the bronze layer. It serves as a 'refresh' for data
+	from the source files.
+*/
+
 TRUNCATE TABLE bronze.crm_cust_info;
 COPY bronze.crm_cust_info(
 	cst_id,
