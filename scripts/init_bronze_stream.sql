@@ -1,9 +1,9 @@
 /*
 =================================================================
-Stream Data from Source Files Into Tables in the Bronze Layer
+Stream Data from Source Files into Tables in the Bronze Layer
 =================================================================
 Script Purpose:  
-    This script executes a TRUNCATE and then batch load for all
+    This script executes a TRUNCATE and then BATCH LOAD for all
 	tables in the Bronze Layer. It serves as a 'refresh' for data
 	from the source files.
 */
