@@ -63,14 +63,6 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 );
 
 -- Step 2
-/* This is the proper code for use with standard ANSI SQL syntax */
-BULK INSERT bronze.crm_cust_info
-FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
-WITH
-	FIRSTROW = 2,
-	FIELDTERMINATOR = ',',
-	TABLOCK
-;
 /* The code stored in this comment is what I actually used within PostgreSQL.
 
 COPY bronze.crm_cust_info(
