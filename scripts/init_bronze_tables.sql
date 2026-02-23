@@ -63,9 +63,15 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 );
 
 -- Step 2
-/* The code stored in this comment is for use within PostgreSQL.
-The code that follows *after* the comment show the same functions
-for use in standard ANSI SQL syntax.
+/* This is the proper code for use with standard ANSI SQL syntax */
+BULK INSERT bronze.crm_cust_info
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
+WITH
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	TABLOCK
+;
+/* The code stored in this comment is what I actually used within PostgreSQL.
 
 COPY bronze.crm_cust_info(
 	cst_id,
@@ -80,8 +86,7 @@ FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-
 DELIMITER ','
 CSV HEADER;
 
-I include this step to verify the row count in the table
-matches the source file.
+-- I include this step to verify the row count in the table matches the source file.
 SELECT COUNT(*) FROM bronze.crm_cust_info;
 
 COPY bronze.crm_prd_info(
@@ -114,10 +119,10 @@ FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-
 DELIMITER ','
 CSV HEADER;
 
-This COPY didn't work because 'sls_order_dt' contains some rows
-with '0' instead of proper DATE format. I will go through and ALTER
-the data type of the column to be able to ingest, then change '0' to 
-NULL, and then ALTER again back to the DATE type.
+-- This COPY didn't work because 'sls_order_dt' contains some rows
+-- with '0' instead of proper DATE format. I will go through and ALTER
+-- the data type of the column to be able to ingest, then change '0' to 
+-- NULL, and then ALTER again back to the DATE type.
 
 ALTER TABLE bronze.crm_sales_details 
 ALTER COLUMN sls_order_dt TYPE VARCHAR(50);
@@ -130,12 +135,10 @@ UPDATE bronze.crm_sales_details
 SET sls_order_dt = NULL
 WHERE sls_order_dt = '0';
 
-This query looks for records in the column that
-are not 8 characters long.
+-- This query looks for records in the column that are not 8 characters long.
 SELECT *
 FROM bronze.crm_sales_details
 WHERE sls_order_dt !~'^\d{8}$';
-
 -- I found two entries still throwing me off: "32154" and "5489"
 
 UPDATE bronze.crm_sales_details
@@ -150,13 +153,28 @@ WHERE sls_order_dt = '5489';
 ALTER TABLE bronze.crm_sales_details 
 ALTER COLUMN sls_order_dt TYPE DATE 
 USING to_date(sls_order_dt, 'YYYYMMDD');
+
+-- Moving onto the ERP tables.
+COPY bronze.erp_cust_az12 (cid, bdate, gen)
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_erp/cust_az12.csv'
+WITH (FORMAT CSV, HEADER true, DELIMITER ',');
+
+-- I hit an issue on the COPY due to unexpected formatting in 'bdate'.
+ALTER TABLE bronze.erp_cust_az12
+ALTER COLUMN bdate TYPE VARCHAR(50);
+
+ALTER TABLE bronze.erp_cust_az12
+ALTER COLUMN bdate TYPE DATE 
+USING to_date(bdate, 'YYYY-MM-DD')
+
+-- All good there, now moving on to the next tables.
+COPY bronze.erp_loc_a101 (cid, cntry)
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_erp/LOC_A101.csv'
+WITH (FORMAT CSV, HEADER true, DELIMITER ',');
+
+COPY bronze.erp_px_cat_g1v2 (id, cat, subcat, maintenance)
+FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_erp/PX_CAT_G1V2.csv'
+WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 */
-BULK INSERT bronze.crm_cust_info
-FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
-WITH
-	FIRSTROW = 2,
-	FIELDTERMINATOR = ',',
-	TABLOCK
-;
 
 
