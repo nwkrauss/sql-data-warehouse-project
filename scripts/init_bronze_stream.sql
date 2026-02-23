@@ -9,43 +9,17 @@ Script Purpose:
 */
 
 TRUNCATE TABLE bronze.crm_cust_info;
-COPY bronze.crm_cust_info(
-	cst_id,
-	cst_key,
-	cst_firstname,
-	cst_lastname,
-	cst_marital_status,
-	cst_gndr,
-	cst_create_date
-	)
+COPY bronze.crm_cust_info(cst_id, cst_key, cst_firstname, cst_lastname, cst_marital_status, cst_gndr, cst_create_date)
 FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
 WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 
 TRUNCATE TABLE bronze.crm_prd_info;
-COPY bronze.crm_prd_info(
-	prd_id,
-	prd_key,
-	prd_nm,
-	prd_cost,
-	prd_line,
-	prd_start_dt,
-	prd_end_dt
-	)
+COPY bronze.crm_prd_info(prd_id, prd_key, prd_nm, prd_cost, prd_line, prd_start_dt, prd_end_dt)
 FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/prd_info.csv'
 WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 
 TRUNCATE TABLE bronze.crm_sales_details;
-COPY bronze.crm_sales_details(
-	sls_ord_num,
-	sls_prd_key,
-	sls_cust_id,
-	sls_order_dt,
-	sls_ship_dt,
-	sls_due_dt,
-	sls_sales,
-	sls_quantity,
-	sls_price
-	)
+COPY bronze.crm_sales_details(sls_ord_num, sls_prd_key, sls_cust_id, sls_order_dt, sls_ship_dt, sls_due_dt, sls_sales, sls_quantity, sls_price)
 FROM '/Users/saxifrage/Desktop/Business/Data Analytics/Udemy Data Warehouse/sql-data-warehouse-project/datasets/source_crm/sales_details.csv'
 WITH (FORMAT CSV, HEADER true, DELIMITER ',');
 
