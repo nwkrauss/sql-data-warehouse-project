@@ -43,7 +43,7 @@ CREATE TABLE bronze.crm_sales_details (
 
 CREATE TABLE bronze.erp_cust_az12 (
 	cid VARCHAR(50),
-	bdate DATE,
+	bdate VARCHAR(50),
 	gen VARCHAR(50)
 );
 
