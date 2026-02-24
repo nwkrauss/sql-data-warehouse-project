@@ -108,11 +108,15 @@ BEGIN
 	
 		EXCEPTION
 			WHEN OTHERS THEN
-			RAISE NOTICE '==================================================';
-			RAISE NOTICE 'ERROR OCCURED DURING LOADING BRONZE LAYER';
-			RAISE NOTICE 'Error Message: %', SQLERRM;
-			RAISE NOTICE 'Error Code: %', SQLSTATE;
-			RAISE NOTICE '==================================================';
+				RAISE EXCEPTION '==================================================
+	ERROR OCCURED DURING LOADING BRONZE LAYER
+	Error Message: %
+	Error Code: %
+	Load Failed After % Seconds
+	==================================================',
+		SQLERRM,
+		SQLSTATE,
+		EXTRACT(EPOCH FROM (clock_timestamp() - v_start_time));
 	END;
 	v_end_time := clock_timestamp();
 	v_duration := v_end_time - v_start_time;
