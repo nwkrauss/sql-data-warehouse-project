@@ -48,6 +48,7 @@ This project is licensed under the [MIT License](https://github.com/nwkrauss/sql
 
 ## About Me
 Hello! I'm Nathan Krauss, a filmmaker of 12 years living in NYC. I have spent my career working as a freelance cinematographer and film lighting technician on everything from narrative films and episodic TV to high-end commercials, documentary and corporate videos. At the core of my work, I have always been obsessed with storytelling, and I love being able to communicate emotions and thematic concepts through camera work and lighting.  
+  
 I have only recently started learning about the wide world of data analytics and let me tell you, I am hooked. I find it fascinating how data collection and analysis can form a lens through which we can better see into and understand the entire world around us. I really enjoy working with SQL, building visualizations, and communicating ideas for actionable insights. I am here to learn more and connect with fellow data nerds!
 
 Let's stay in touch! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/nathan-krauss-b9a958396/).
