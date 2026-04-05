@@ -47,6 +47,6 @@ data-warehouse-project/
 This project is licensed under the [MIT License](https://github.com/nwkrauss/sql-data-warehouse-project/blob/main/LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## About Me
-Hi there! I'm Baraa Khatib Salkini, also known as Data With Baraa. I’m an IT professional and passionate YouTuber on a mission to share knowledge and make working with data enjoyable and engaging!
+Hello! I'm Nathan Krauss, a filmmaker of 12 years living in NYC. I have spent my career working as a freelance cinematographer and film lighting technician on everything from narrative films and episodic TV to high-end commercials, documentary and corporate videos. At the core of my work, I have always been obsessed with storytelling, and I love being able to communicate emotions and thematic concepts through camera work and lighting.  I have only recently started learning about the wide world of data analytics and let me tell you, I am hooked. I find it fascinating how data collection and analysis can form a lens through which we can better see into and understand the entire world around us. I really enjoy working with SQL, building visualizations, and communicating ideas found within data. I am here to learn more and connect with fellow data nerds!
 
 Let's stay in touch! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/nathan-krauss-b9a958396/).
