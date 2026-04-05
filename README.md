@@ -17,36 +17,27 @@ I created this repository for my portfolio as a resource to showcase skills in:
 • Data Modeling  
 • Data Analytics  
   
-### Step 1
-#### I create these four folders in github:  
-'datasets', 'docs', 'scripts', 'tests'  
--- each contains a 'placeholder' file to establish the folder.
-
-### Step 2
-#### I establish my database.  
--- I'm running PostGres with PgAdmin and start with this query:  
-CREATE DATABASE DataWarehouse;  
-
--- Then I connect Query Tool to 'datawarehouse'.  
--- In the new Query Tool that is connected to 'datawarehouse':  
-CREATE SCHEMA bronze;  
-CREATE SCHEMA silver;  
-CREATE SCHEMA gold;  
-
--- In github, I go into the 'scripts' folder and create a new file 'init_database.sql'  
--- In this file, I include the code used in this step.  
--- I also include, at the top, a "sticky note" that explains what the file is.  This is the note:  
-  
-'Create Database and Schemas
-Script Purpose:  
-This script creates a new database named 'DataWarehouse'.
-Additionally, the script sets up three schemas within the database:
-'bronze', 'silver', and 'gold'.  
-  
-WARNING:
-Running this script will create a new database 'Datawarehouse'.
-If 'Datawarehouse' already exists, all data in the database
-might be permanently deleted. Proceed with caution and ensure
-you have proper backups before running this.'
-
-### Step 3  
+## Repository Structure
+data-warehouse-project/
+│
+├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+│
+├── docs/                               # Project documentation and architecture details
+│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
+│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
+│   ├── data_models.drawio              # Draw.io file for data models (star schema)
+│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+│
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Scripts for extracting and loading raw data
+│   ├── silver/                         # Scripts for cleaning and transforming data
+│   ├── gold/                           # Scripts for creating analytical models
+│
+├── tests/                              # Test scripts and quality files
+│
+├── README.md                           # Project overview and instructions
+├── LICENSE                             # License information for the repository
+├── .gitignore                          # Files and directories to be ignored by Git
+└── requirements.txt                    # Dependencies and requirements for the project
