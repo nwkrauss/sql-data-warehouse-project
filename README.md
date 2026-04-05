@@ -9,6 +9,7 @@ The project involves:
 4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
 
 I created this repository for my portfolio as a resource to showcase skills in:  
+  
 • SQL Development  
 • Data Architecture  
 • Data Engineering  
