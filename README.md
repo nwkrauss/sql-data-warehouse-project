@@ -44,7 +44,8 @@ data-warehouse-project/
 ├── LICENSE                             # License information for the repository
 ```
 ## License
-This project is licensed under the [MIT License](https://github.com/nwkrauss/sql-data-warehouse-project/blob/main/LICENSE). You are free to use, modify, and share this project with proper attribution. This project is created as part of a Data Warehouse course on Udemy by instructor Baraa Khatib Salkini.
+This project is licensed under the [MIT License](https://github.com/nwkrauss/sql-data-warehouse-project/blob/main/LICENSE). You are free to use, modify, and share this project with proper attribution.  
+This project is created as part of a course on Udemy by instructor Baraa Khatib Salkini: 'Building a Modern Data Warehouse: Data Engineering Bootcamp'
 
 ## About Me
 Hello! I'm Nathan Krauss, a filmmaker of 12 years living in NYC. I have spent my career working as a freelance cinematographer and film lighting technician on everything from narrative films and episodic TV to high-end commercials, documentary and corporate videos. At the core of my work, I have always been obsessed with storytelling, and I love being able to communicate emotions and thematic concepts through camera work and lighting.  
