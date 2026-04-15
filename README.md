@@ -1,5 +1,5 @@
 # Data Warehouse and Analytics Project
-Welcome to my **Data Warehouse and Analytics Project** repository! This project demonstrates a comprehensive data warehousing and analytics solution while highlighting industry best practices.
+Welcome to my **Data Warehouse and Analytics Project** repository! This project demonstrates a comprehensive data warehousing and analytics solution while highlighting industry best practices. I have created it with instruction by Baraa Khatib Salkini via his course on Udemy: **Building a Modern Data Warehouse:** Data Engineering Bootcamp
 
 ## Project Overview
 The project involves:
@@ -48,7 +48,6 @@ data-warehouse-project/
 ```
 ## License
 This project is licensed under the [MIT License](https://github.com/nwkrauss/sql-data-warehouse-project/blob/main/LICENSE). You are free to use, modify, and share this project with proper attribution.  
-This project is created as part of a course on Udemy by instructor Baraa Khatib Salkini: **Building a Modern Data Warehouse:** Data Engineering Bootcamp
 
 ## About Me
 Hello! I'm Nathan Krauss, a filmmaker of 12 years living in NYC. I have spent my career working as a freelance cinematographer and film lighting technician on everything from narrative films and episodic TV to high-end commercials, documentary and corporate videos. At the core of my work, I have always been obsessed with storytelling, and I love being able to communicate emotions and thematic concepts through camera work and lighting.  
