@@ -8,7 +8,7 @@ Purpose:
     - To measure growth or decline over specific periods.
 
 SQL Functions Used:
-    - Date Functions: DATEPART(), DATETRUNC(), FORMAT()
+    - Date Functions: EXTRACT(), DATETRUNC(), TO_CHAR()
     - Aggregate Functions: SUM(), COUNT(), AVG()
 ===============================================================================
 */
