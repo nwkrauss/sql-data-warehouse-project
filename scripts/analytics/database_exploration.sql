@@ -20,13 +20,10 @@ ORDER BY table_schema;
 
 -- Retrieve all columns for a specific table (dim_customers)
 SELECT
-    COLUMN_NAME, 
-    DATA_TYPE, 
-    IS_NULLABLE, 
-    CHARACTER_MAXIMUM_LENGTH
+    column_name, 
+    data_type, 
+    is_nullable, 
+    character_maximum_length
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'dim_customers'
+WHERE table_name = 'dim_customers'
 ORDER BY ordinal_position;
-
-
-
