@@ -7,7 +7,7 @@ Purpose:
     - To understand the range of historical data.
 
 SQL Functions Used:
-    - MIN(), MAX(), DATEDIFF()
+    - MIN(), MAX(), AGE()
 ===============================================================================
 */
 
@@ -20,9 +20,9 @@ FROM gold.fact_sales;
 
 -- Find the youngest and oldest customer based on birthdate
 SELECT
-	EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM MAX(birthdate)) AS youngest_customer_age,
+	EXTRACT(YEAR FROM AGE('2014-02-09'::DATE, MAX(birthdate))) AS youngest_customer_age,
 	MAX(birthdate) AS youngest_customer_birthday,
-	EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM MIN(birthdate)) AS oldest_customer_age,
+	EXTRACT(YEAR FROM AGE('2014-02-09'::DATE, MIN(birthdate))) AS oldest_customer_age,
 	MIN(birthdate) AS oldest_customer_birthday,
 	EXTRACT(YEAR FROM AGE(MAX(birthdate), MIN(birthdate))) AS age_range
 FROM gold.dim_customers;
