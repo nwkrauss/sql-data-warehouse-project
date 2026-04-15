@@ -1,5 +1,5 @@
 # Data Warehouse and Analytics Project
-Welcome to my **Data Warehouse and Analytics Project** repository! This project demonstrates a comprehensive data warehousing and analytics solution while highlighting industry best practices. I have created this project with instruction by Baraa Khatib Salkini via his course on Udemy, *Building a Modern Data Warehouse: Data Engineering Bootcamp*
+Welcome to my **Data Warehouse and Analytics Project** repository! This project demonstrates a comprehensive data warehousing and analytics solution while highlighting industry best practices. I have created this project with instruction by Baraa Khatib Salkini via his course on Udemy, *Building a Modern Data Warehouse: Data Engineering Bootcamp*.
 
 ## Project Overview
 The project involves:
