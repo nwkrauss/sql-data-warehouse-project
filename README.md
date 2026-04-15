@@ -6,7 +6,7 @@ The project involves:
 1. **Data Architecture**: Designing a Modern Data Warehouse using Medallion Architecture (**Bronze**, **Silver**, and **Gold** layers).
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+4. **Analytics & Reporting**: Creating SQL-based reports for dashboards and actionable insights.
 
 I created this repository for my portfolio as a resource to practice and showcase skills in:  
   
@@ -33,10 +33,13 @@ data-warehouse-project/
 │   ├── data_model.png                  # .PNG file for data models (star schema)
 │   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
 │
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
+├── scripts/                            
+│   ├── data_analysis/                  # Contains SQL scripts for data exploration, aggregating metrics and calculating KPIs
+│   ├── data_architecture/              # Contains SQL scripts for ETL and transformations
+│   │   ├── bronze/                     # Scripts for extracting and loading raw data
+│   │   ├── silver/                     # Scripts for cleaning and transforming data
+│   │   ├── gold/                       # Scripts for creating analytical models                     
+│   ├── init_database.sql               # .SQL script that creates a new database and schemas for the project
 │
 ├── tests/                              # Test scripts and quality files
 │
